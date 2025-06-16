@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio</title>
+  <style>
+    body {
+      background-color: rgb(51, 164, 198);
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: white;
+      margin-bottom: 40px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .project {
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 30px;
+      display: flex;
+      flex-direction: column; 
+      gap: 30px;
+    }
+
+    .project-row {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start; 
+    }
+
+    .project img {
+      width: 200px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .project-content {
+      flex: 1;
+    }
+
+    .project-content h2 {
+      margin: 0 0 10px;
+      color: #333;
+    }
+
+    .project-content .details {
+      margin: 0;
+      color: #555;
+    }
+
+    .project-content a {
+      color: #007bff;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 5px;
+    }
+
+    .project-content a:hover {
+      text-decoration: underline;
+    }
+
+    .btn {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 15px;
+    }
+
+    .btn button {
+      background-color: #10e117;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      color: white;
+      font-size: 14px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>My Projects</h1>
+
+    <div class="project">
+      <!-- Project 1 -->
+      <div class="project-row">
+        <img src="images.jpg" alt="Portfolio Website">
+        <div class="project-content">
+          <h2>Portfolio Website</h2>
+          <div class="details">
+            <p>Laravel, HTML, CSS</p>
+            <a href="https://github.com/biswas-69/port">GitHub link</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-row">
+        <img src="e2.jpeg" alt="E-Commerce Website">
+        <div class="project-content">
+          <h2>E-Commerce Website</h2>
+          <div class="details">
+            <p>PHP, HTML, CSS, JavaScript</p>
+            <a href="https://github.com/biswas-69/port">GitHub link</a>
+          </div>
+        </div>
+      </div>
+      <div class="btn">
+      <button>ADD</button>
+    </div>
+    </div>
+
+    
+  </div>
+</body>
+</html>
