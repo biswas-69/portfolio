@@ -7,7 +7,7 @@
 </head>
 <body>
     <style>
-            body {
+        body {
             font-family: 'Times New Roman',sans-serif;
             background-color: #dfe8f0;
             margin: 0;
@@ -67,23 +67,32 @@
         button:hover {
             background-color: #0056b3;
         }
-     </style>
-     
+    </style>
+
     <div class="container">
         <h1>Contact Me</h1>
-        <form action="#" method="POST">
-            <label for="name">Full Name</label>
-            <input type="text" placeholder="Enter Your Name" id="name" name="name" required>
-
-            <label for="email">Gmail</label>
-            <input type="email" placeholder="Enter Gmail" id="email" name="email" required>
-
-            <label for="message">Message</label>
-            <textarea placeholder="Enter Message" id="message" name="message" required></textarea>
-
-            <button type="submit">Submit</button>
-        </form>
+        
+        @if (session('success'))
+    <div style="color: green; margin-bottom: 15px;">
+        {{ session('success') }}
     </div>
-    
+    @endif
+
+
+    <form action="/contact" method="POST">
+    @csrf
+    <label for="name">Full Name</label>
+    <input type="text" name="name" id="name" placeholder="Enter your name" value="{{ old('name') }}">
+
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" placeholder="Enter email" value="{{ old('email') }}">
+
+    <label for="message">Message</label>
+    <textarea name="message" id="message" placeholder="Enter message">{{ old('message') }}</textarea>
+
+    <button type="submit">Submit</button>
+</form>
+
+    </div>
 </body>
 </html>
