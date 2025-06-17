@@ -12,6 +12,6 @@ Route::get('/index', function () {
     return view('index');
 });
 
-use App\Http\Controller\IndexController;
+// use App\Http\Controller\IndexController;
 
-Route::get('/home',[IndexController::class,'index']);
+// Route::get('/home',[IndexController::class,'index']);
