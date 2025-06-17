@@ -8,3 +8,9 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('home');
 });
+Route::get('/project', function () {
+    return view('project');
+});
+Route::get('/addp', function () {
+    return view('addp');
+});

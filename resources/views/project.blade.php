@@ -30,6 +30,7 @@
       display: flex;
       flex-direction: column; 
       gap: 30px;
+      position: relative;
     }
 
     .project-row {
@@ -69,14 +70,14 @@
       text-decoration: underline;
     }
 
-    .btn {
-      width: 100%;
+    .top-right-btn {
       display: flex;
-      justify-content: center;
-      margin-top: 15px;
+      justify-content: flex-end;
+      margin-bottom: -10px;
+      margin-right: 20px;
     }
 
-    .btn button {
+    .top-right-btn a button {
       background-color: #10e117;
       border: none;
       padding: 10px 20px;
@@ -92,9 +93,14 @@
     <h1>My Projects</h1>
 
     <div class="project">
+      <!-- Button in top-right -->
+      <div class="top-right-btn">
+        <a href="addp"><button>ADD</button></a>
+      </div>
+
       <!-- Project 1 -->
       <div class="project-row">
-        <img src="images.jpg" alt="Portfolio Website">
+        <img src="h3.jpg" alt="Portfolio Website">
         <div class="project-content">
           <h2>Portfolio Website</h2>
           <div class="details">
@@ -106,7 +112,7 @@
 
       <!-- Project 2 -->
       <div class="project-row">
-        <img src="e2.jpeg" alt="E-Commerce Website">
+        <img src="e3.jpeg" alt="E-Commerce Website">
         <div class="project-content">
           <h2>E-Commerce Website</h2>
           <div class="details">
@@ -115,12 +121,7 @@
           </div>
         </div>
       </div>
-      <div class="btn">
-      <button>ADD</button>
     </div>
-    </div>
-
-    
   </div>
 </body>
 </html>
