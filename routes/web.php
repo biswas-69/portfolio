@@ -1,17 +1,7 @@
 <?php
+use App\Http\Controllers\CvController;
 
-use Illuminate\Support\Facades\Route;
-
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/home', function () {
-    return view('home');
-});
-Route::get('/index', function () {
-    return view('index');
-});
-
-use App\Http\Controller\IndexController;
-
-Route::get('/home',[IndexController::class,'index']);
+Route::get('/', [CvController::class, 'create'])->name('cv.create');
+Route::post('/cv', [CvController::class, 'store'])->name('cv.store');
+Route::get('/cv/preview/{id}', [CvController::class, 'preview'])->name('cv.preview');
+Route::get('/cv/download/{id}', [CvController::class, 'download'])->name('cv.download');
