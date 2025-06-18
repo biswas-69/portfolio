@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ProjectRequest;
 use App\Models\project;
 
+
 class ProjectController extends Controller
 {
     public function index()
@@ -23,7 +24,7 @@ class ProjectController extends Controller
     public function project()
     {
         $projects = Project::latest()->get();
-        return view('project', compact('projects'));
+        return view('project', ['projects' => $projects]);
     }
 
      public function add()
@@ -41,5 +42,23 @@ class ProjectController extends Controller
         }
         Project::create($validated);
         return redirect('/');
-     }
+     } 
+     public function update(ProjectRequest $request)
+    {  
+        $validated = $request->validated();
+        if($request->hasFile('photo')){
+            $path =  $request->file('photo')->store('images','local');
+            $validated['photo'] = 'storage/' . $path;
+        }
+
+        Project::where('id', $request['id'])->update($validated);
+
+        return redirect('/');
+    }
+
+    public function updateView($id)
+    {
+        $pro = Project::where('id', $id)->get();
+        return view('update', ['pro'=>$pro[0]]);
+    }
 }
