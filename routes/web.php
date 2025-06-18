@@ -1,9 +1,15 @@
 <?php
-use App\Http\Controllers\CvController;
 
+use App\Http\Controllers\PhotoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\AboutController;
+
+Route::get('/', [PhotoController::class, 'uploadForm'])->name('photos.upload');
+Route::post('/upload', [PhotoController::class, 'store'])->name('photos.store');
+Route::get('/preview/{id}', [PhotoController::class, 'preview'])->name('photos.preview');
+Route::get('/download/{id}', [PhotoController::class, 'download'])->name('photos.download');
+
 
 Route::get('/about', [ProjectController::class, 'about']);
 
