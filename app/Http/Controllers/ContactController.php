@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Contact;
+
 class ContactController extends Controller
 {
     public function show()
@@ -18,6 +20,8 @@ class ContactController extends Controller
         'email' => 'required|email',
         'message' => 'required'
     ]);
+
+    Contact::create($validated);
 
     return redirect('/contact')->with('success', 'Message sent successfully!');
 }

@@ -17,10 +17,10 @@
         .container {
             max-width: 500px;
             margin: 50px auto;
-            padding: 30px;
+            padding: 20px;
             background-color: #fff;
             border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 4px 10px rgba(36, 35, 35, 0.1);
         }
 
         h1 {
@@ -49,7 +49,7 @@
 
         textarea {
             resize: vertical;
-            height: 120px;
+            height: 100px;
         }
 
         button {
@@ -72,27 +72,27 @@
     <div class="container">
         <h1>Contact Me</h1>
         
-        @if (session('success'))
-    <div style="color: green; margin-bottom: 15px;">
-        {{ session('success') }}
-    </div>
-    @endif
+             @if (session('success'))
+                <div style="color: green; margin-bottom: 15px;">
+                {{ session('success') }}
+        </div>
+        @endif
 
 
-    <form action="/contact" method="POST">
-    @csrf
-    <label for="name">Full Name</label>
-    <input type="text" name="name" id="name" placeholder="Enter your name" value="{{ old('name') }}">
+                <form action="/contact" method="POST">
+                @csrf
+                    <label for="name">Full Name</label>
+                    <input type="text" name="name" id="name" placeholder="Enter your name" value="{{ old('name') }}">
 
-    <label for="email">Email</label>
-    <input type="email" name="email" id="email" placeholder="Enter email" value="{{ old('email') }}">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Enter email" value="{{ old('email') }}">
 
-    <label for="message">Message</label>
-    <textarea name="message" id="message" placeholder="Enter message">{{ old('message') }}</textarea>
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" placeholder="Enter message">{{ old('message') }}</textarea>
 
-    <button type="submit">Submit</button>
-</form>
+                    <button type="submit">Submit</button>
+            </form>
 
-    </div>
-</body>
-</html>
+        </div>
+    </body>
+    </html>
