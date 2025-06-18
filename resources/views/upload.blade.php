@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Upload Photo</title>
-    <style>
+      <style>
         .all{
             border:2px solid black;
             width:600px;
@@ -11,8 +11,7 @@
 
     </style>
 </head>
-<body> 
-    <div class="all">
+<body>
     <h1>Upload Photo</h1>
 
     <form action="{{ route('photos.store') }}" method="POST" enctype="multipart/form-data">
@@ -20,6 +19,5 @@
         <input type="file" name="photo" required>
         <button type="submit">Upload</button>
     </form>
-</div>
 </body>
 </html>

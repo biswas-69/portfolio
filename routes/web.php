@@ -1,7 +1,8 @@
 <?php
-use App\Http\Controllers\CvController;
 
-Route::get('/', [CvController::class, 'create'])->name('cv.create');
-Route::post('/cv', [CvController::class, 'store'])->name('cv.store');
-Route::get('/cv/preview/{id}', [CvController::class, 'preview'])->name('cv.preview');
-Route::get('/cv/download/{id}', [CvController::class, 'download'])->name('cv.download');
+use App\Http\Controllers\PhotoController;
+
+Route::get('/', [PhotoController::class, 'uploadForm'])->name('photos.upload');
+Route::post('/upload', [PhotoController::class, 'store'])->name('photos.store');
+Route::get('/preview/{id}', [PhotoController::class, 'preview'])->name('photos.preview');
+Route::get('/download/{id}', [PhotoController::class, 'download'])->name('photos.download');

@@ -16,12 +16,8 @@ class CvController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'name' => 'required',
-            'address' => 'required',
-            'education' => 'required|array',
-            'experience' => 'required|array',
-            'hobbies' => 'required|array',
-            'award' => 'required|array',
+                'name' => $request->name,     
+            
             'photo' => 'nullable|image|mimes:jpg,png,jpeg|max:2048',
         ]);
 
@@ -30,11 +26,8 @@ class CvController extends Controller
         }
 
         // Convert arrays to JSON
-        $data['education'] = json_encode($data['education']);
-        $data['experience'] = json_encode($data['experience']);
-        $data['hobbies'] = json_encode($data['hobbies']);
-        $data['award'] = json_encode($data['award']);
-
+        
+        
         $cv = Cv::create($data);
 
         return redirect()->route('cv.preview', $cv->id);
