@@ -1,58 +1,41 @@
-@extends('layouts.app') 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <style>
+    body { font-family: Arial; background: #f4f4f4; }
+    table { width: 90%; margin: 20px auto; background: #fff; border-collapse: collapse; }
+    th, td { padding: 12px; border-bottom: 1px solid #ddd; }
+    th { background: #f2f2f2; }
+  </style>
+</head>
+<body>
 
-@section('content')
-<div class="dashboard-container">
-    <h2>Contact Submissions</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Full Name</th>
-                <th>Email</th>
-                <th>Message</th>
-            </tr>
-        </thead>
-        <tbody>
-            @forelse($contacts as $contact)
-                <tr>
-                    <td>{{ $contact->name }}</td>
-                    <td>{{ $contact->email }}</td>
-                    <td>{{ $contact->message }}</td>
-                </tr>
-            @empty
-                <tr>
-                    <td colspan="3">No contact messages yet.</td>
-                </tr>
-            @endforelse
-        </tbody>
-    </table>
-
-    <div class="mt-4 d-flex justify-content-center">
-        {{ $contacts->links('pagination::bootstrap-5') }}
-    </div>
+<div class="header">
+  <h2 style="text-align:center;">Contact Details</h2>
 </div>
-@endsection
 
-@push('styles')
-    <style>
-        .dashboard-container {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 12px;
-            border-bottom: 1px solid #ccc;
-            text-align: left;
-        }
-        th {
-            background-color: #f0f0f0;
-        }
-    </style>
-@endpush
+<table>
+  <thead>
+    <tr>
+      <th>S.No.</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Message</th>
+    </tr>
+  </thead>
+  <tbody>
+   
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+
+  </tbody>
+</table>
+
+</body>
+</html>
