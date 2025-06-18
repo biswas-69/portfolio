@@ -11,7 +11,7 @@
       font-family: arial;
     }
     body {
-      background:rgb(60, 94, 50)
+      background:rgb(45, 51, 43)
       color: #333;
       line-height: 1;
     }
@@ -48,10 +48,10 @@
         transition: color 0.3s;
     }
     .navbar ul li a:hover {
-        color: rgb(34, 62, 48);
-        font-size:10px;
-        font-weight:500;
-        transition: 1s;
+        /* color: rgb(34, 62, 48); */
+        font-size:15px;
+        /* font-weight:500; */
+        transition: 0.3s;
     }
     .container {
         display: flex;
@@ -67,7 +67,7 @@
 
     .left h1 {
         font-size: 48px;
-        color: silver;
+        color: rgb(73, 74, 72);
         margin-bottom: 20px;
     }
     .left p {
@@ -85,7 +85,7 @@
         cursor: pointer;
     }
     .btn:hover {
-        background-color:rgb(13, 245, 55);
+        background-color:rgb(33, 71, 57);
     }
     .right {
         flex: 1;
@@ -97,7 +97,19 @@
         width: 300px;
         height: 300px;
         object-fit: cover;
-        border: 6px solid rgb(21, 143, 191);
+        border: 6px;
+    }
+    .project-card{
+        width: 300px;
+        padding: 15px;
+        border: 1px solid green;
+        border-radius: 10px;
+        background: none;
+    }
+    .project-title{
+        font-width: bold;
+        font-size:16px;
+        margin-bottom:10px;
     }
     @media (max-width: 768px) {
         .container {
@@ -117,6 +129,7 @@
             align-items: center;
       }
     }
+    
   </style>
 </head>
 <body>
@@ -124,10 +137,10 @@
         <div class="logo">My Portfolio</div>
         <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="/contact.html">Contact</a></li>
-            <li><a href="#resume">Resume</a></li>
+            <li><a href="/projects">Projects</a></li>
+            <li><a href="/about">About Me</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/resume">Resume</a></li>
         </ul>
     </nav>
 
@@ -135,20 +148,74 @@
         <div class="left">
             <h1>Hello, I'm Mikki</h1>
       <p>
-        I’m a creative graphic designer with a strong passion for 
-        visual storytelling. I love blending colors, shapes, and typography to build 
-        unique designs that capture attention and communicate clearly. Whether it’s 
-        branding, print design, UI elements, or social media content, 
-        I enjoy crafting visual solutions that are both artistic and functional. 
-        Let's work together to bring your ideas to life through thoughtful design.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt saepe earum excepturi nostrum eum enim deleniti tenetur assumenda quod, facere nam qui illo atque laboriosam aspernatur ratione error quia temporibus.
+        Blanditiis consequatur eius tempore, inventore accusantium accusamus praesentium laudantium ea reiciendis, illo reprehenderit aut? Debitis suscipit nobis ab ut natus eligendi sunt vero at, ex, illo optio, nostrum blanditiis iusto!
+        Beatae harum quaerat molestias id facere nobis architecto ad mollitia nulla autem. Maxime et non sint autem corrupti! Alias, ipsum corrupti. Velit ipsa saepe commodi natus esse quo. Quaerat, laudantium.
       </p>
-      <a href="/contact.html"><button class="btn">Contact Me</button></a>
+      <a href="/"><button class="btn">View Projects</button></a>
     </div>
 
     <div class="right">
       <img src="https://th.bing.com/th/id/OIP.BV0smfVZaoC-6rlL8_Bc7AHaEK?w=1920&h=1080&rs=1&pid=ImgDetMain" alt="Profile Photo">
     </div>
-  </div>
+    </div>
+
+    <section style="padding: 50px 10%;">
+        <h2 style="font-size: 32px; color:rgb(57, 89, 61); margin-bottom: 30px;">Featured Project</h2>
+        <div style="display: grid; grid-template-columns:1fr 1fr 1fr 1fr; gap: 30px; justify-content: 
+            center;">
+
+    <div style="background: white; border: 2px solid none; border-radius: 10px; 
+    overflow: hidden; width: 300px; box-shadow: 0 10px 20px rgb(0, 0, 0, 0.2);">
+    <img src="https://nestify.io/wp-content/uploads/2023/04/35019949_8252889-1024x576.jpg" alt="E-Commerce" style="width: 100%; 
+    height: 180px; object-fit: cover;">
+    <div style="padding: 15px;">
+        <h6 class="project-title">Platform for E-commerce</h6>
+        <p class="project-decreiption" style="font-size: 14px; color: rgb(23, 23, 23);">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto placeat modi tempora accusamus explicabo alias ratione, soluta voluptate autem quo dolores reiciendis. Distinctio tempore possimus non sequi quod numquam accusantium!
+    </p>
+      </div>
+    </div>
+
+    <div style="background: white; border: 2px none;border-radius: 10px;
+    overflow: hidden; width: 300px; box-shadow: 0 10px 20px rgb(0, 0, 0, 0.2);">
+    <img src="https://s3-alpha.figma.com/hub/file/1171935825/689d7884-5ef7-4671-a2b3-bfb59996cfa9-cover.png" alt="E-Commerce" style="width: 
+    100%; height: 180px; object-fit: cover;">
+    <div style="padding: 15px;">
+        <h6 class="project-title">Mobile App for Fitness Tracking</h6>
+        <p class="project-decreiption" style="font-size: 14px; color:rgb(23, 23, 23);">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto placeat modi tempora accusamus explicabo alias ratione, soluta voluptate autem quo dolores reiciendis. Distinctio tempore possimus non sequi quod numquam accusantium!
+    </p>
+    </div>
+    </div>
+
+    <div style="background: white; border: 2px none;border-radius: 10px;
+    overflow: hidden; width: 300px; box-shadow: 0 10px 20px rgb(0, 0, 0, 0.2);">
+    <img src="https://thinklayer.com/wp-content/uploads/2021/06/business-analytics-services-transforming-data-into-insight-1-scaled.jpg" alt="E-Commerce" style="width: 
+    100%; height: 180px; object-fit: cover;">
+    <div style="padding: 15px;">
+        <h6 class="project-title">Data Analytics for Business Insights</h6>
+        <p class="project-decreiption" style="font-size: 14px; color:rgb(23, 23, 23);">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto placeat modi tempora accusamus explicabo alias ratione, soluta voluptate autem quo dolores reiciendis. Distinctio tempore possimus non sequi quod numquam accusantium!
+    </p>
+    </div>
+    </div>
+
+    <div style="background: white; border: 2px none; border-radius: 10px;
+    overflow: hidden; width: 300px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); ">
+    <img src="https://th.bing.com/th/id/OIP.pGktFUArFz-Fc4570n1HigHaDo?rs=1&pid=ImgDetMain" alt="E-Commerce" style="width: 100%; 
+    height: 180px; object-fit: cover;">
+    <div style="padding: 15px;">
+        <h6 class="project-title">Data Analytics Dashboard for Business Insights</h6>
+        <p class="project-decreiption" style="font-size: 14px; color:rgb(23, 23, 23);">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto placeat modi tempora accusamus explicabo alias ratione, soluta voluptate autem quo dolores reiciendis. Distinctio tempore possimus non sequi quod numquam accusantium!
+    </p>
+    </div>
+    </div>
+
+    </div>
+    </section>
+
 
 </body>
 </html>
