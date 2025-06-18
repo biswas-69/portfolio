@@ -1,7 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Upload Photo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@yield('title','Portfolio')</title>
+</head>
+<body>
+    <main class="container">
+        @yield('content')
+    </main>
+
+</body>
+</html>
+
+<!-- <title>Upload Photo</title>
     <style>
         .all{
             border:2px solid black;
@@ -20,6 +32,4 @@
         <input type="file" name="photo" required>
         <button type="submit">Upload</button>
     </form>
-</div>
-</body>
-</html>
+</div> -->
