@@ -157,7 +157,8 @@
         <div class="home-button">
          <button href="#" >Home</button> 
          <a href="{{ url('/about') }}"> <button>About</button></a>
-         <button href="#">Project</button>
+        <a href="{{ url('/project') }}"> <button>Project</button></a>
+         
          <button href="#">Contact</button>
          <a href="{{ url('/login') }}"><button type="button">Admin Login</button></a>
 
