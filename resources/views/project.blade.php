@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfolio</title>
+@extends('partial.layout')
   <style>
     body {
       background-color: rgb(51, 164, 198);
@@ -87,6 +82,41 @@
       cursor: pointer;
     }
   </style>
+  @section('content')
+<a href="/login" style="text-align:left;">Redirect to login page</a>
+<h1> My TODO List </h1>
+    <div class="content">
+        <div class="add_btn">
+                <a href="/addp" class="edit_btn"> ADD </a><br><br>
+                <form method="POST" action="/logout">
+
+
+        </div>
+        <ul>
+            @foreach ($projects as $pro)
+        <li><div class="list">
+            <div class="image">
+                <img id="image" src="{{asset($pro['photo']) }}" alt="img">
+            </div>
+            <p>{{$projects['name']}}</p>
+            <aside>
+                <a type="button" class="edit_btn" href="/update/{{$pro['id']}}">Edit</a>
+                <form method="POST" action="/delete/{{$pro['id']}}">
+                    @csrf
+                    @method("DELETE")
+                <button type="button" class="del_btn">Delete</button>
+                </form>
+            </aside>
+            
+        </div></li>
+        @endforeach
+        </ul>
+        <div>
+         {{$projects->links()}}
+    
+        </div>
+    </div>
+@endsection
 </head>
 <body>
   <div class="container">

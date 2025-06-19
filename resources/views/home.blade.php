@@ -1,157 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>home</title>
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body{
-            body {
-           padding-top: 80px; 
-       }
+  <meta charset="UTF-8">
+  <title>My Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: arial;
+    }
+    body {
+      background:rgb(45, 51, 43)
+      color: #333;
+      line-height: 1;
+    }
+    .navbar {
+        display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 10%;
+      background-color:rgb(73, 130, 109);
+      position: sticky;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      width: 100%;
+    }
+    .logo{
+        font-size: 24px;
+        font-weight: bold;
+        color: white;
+        margin-left: 0;
+    }
+    .navbar ul {
+        list-style: none;
+        display: flex;
+    }
+    .navbar ul li {
+        margin-left: 30px;
+        list-style: none;
+    }
+    .navbar ul li a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        transition: color 0.3s;
+    }
+    .navbar ul li a:hover {
+        /* color: rgb(34, 62, 48); */
+        font-size:15px;
+        /* font-weight:500; */
+        transition: 0.3s;
+    }
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 60px 10%;
+        flex-wrap: wrap;
+    }
+    .left {
+        flex: 1;
+        min-width: 300px;
+    }
 
-        }
+    .left h1 {
+        font-size: 48px;
+        color: rgb(73, 74, 72);
+        margin-bottom: 20px;
+    }
+    .left p {
+        font-size: 18px;
+        max-width: 500px;
+        margin-bottom: 30px;
+    }
+    .btn {
+        background-color:rgb(43, 65, 40);
+        color: white;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    .btn:hover {
+        background-color:rgb(33, 71, 57);
+    }
+    .right {
+        flex: 1;
+        min-width: 300px;
+        display: flex;
+        justify-content: center;
+    }
+    .right img {
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+        border: 6px;
+    }
+    .project-card{
+        width: 300px;
+        padding: 15px;
+        border: 1px solid green;
+        border-radius: 10px;
+        background: none;
+    }
+    .project-title{
+        font-width: bold;
+        font-size:16px;
+        margin-bottom:10px;
+    }
+    @media (max-width: 768px) {
         .container {
-               position: fixed;
-                 top: 0;
-                 left: 0;
-                 width: 100%;
-                 height: 80px;
-                 background-color: black;
-                 display: flex;
-                 justify-content: space-between;
-                
-}
-
-        a{
-
-         color: white;
-         font-size: 20px;
-         text-decoration: none;
-        }
-        .home-button{
-            display: flex;
-            gap: 45px;
-            margin-right: 20px;
-            margin-top: 20px;
-            
-        }
-        button{
-            height:40px;
-            width: 60px;
-            background-color: black;
-            color: white;
-        }
-        #logo{
-            font-size: 30px;
-            margin-top: 20px;
-        }
-        .profile{
-            margin-top: 50px;
-            height: 400px;
-            width: 100%;
-            border: 2px solid black;
-            display: flex;
-            flex-wrap: wrap;
-            
-            margin-right: 20px;
-            overflow: hidden;
-        }
-        img{
-            height:auto;
-            width: 100%;
-            max-width: 400px;
-             max-width: 400px; 
-             object-fit: contain;
-              flex-shrink: 0;
-              border-radius: 10px;
-        }
-        
-        .info{
-            margin-left: 30px;
-            flex: 1;
-            min-width: 250px;
-        }
-        h2{
-            margin-top: 30px;
-            margin-bottom: 10px;
-            font-size: 40px;
-        }
-        p{
-            margin-bottom: 140px;
-        }
-        .viewbutton{
-            display: inline-block;
-            margin-left: 400px;
-            height: 50px;
-            width: 200px;
-            line-height: 50px;
+            flex-direction: column-reverse;
             text-align: center;
-            font-size: 16px;
-            
-            background-color: #dda0dd; 
-            color: #333;
-            font-weight: bold;
-            border-radius: 25px;
-            text-decoration: none;
-            
         }
-        .feature-project{
-           width: 100%;
-            display: flex;
-            justify-content: center;
-             flex-wrap: wrap;
-              gap: 4px;
-            margin-top: 3px;
-        
+        .right img {
+            margin-bottom: 30px;
         }
-        .first-project{
-            height: calc(100vh - 500px);
-            width: 33%;
-            border: 2px solid black;
-            
+        .navbar {
+            flex-direction: column;
+            gap: 10px;
         }
-        .img2{
-            width: 100%;
-            border-radius: 20px;
-            margin-left: 60px;
-            margin-top: 10px;
-        }
-        p{
-            margin-left: 10px;
-            padding: 0;
-        }
-        
-        @media (max-width: 768px) {
-  .profile {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .info {
-    margin-left: 0;
-    text-align: center;
+        .navbar ul {
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+      }
+    }
     
-  }
-
-  .viewbutton {
-    margin-left: 0;
-     margin-right: auto;
-    margin-left: auto;
-    display: block;
-    
-
-  }
-}
-        
-    </style>
+  </style>
 </head>
 <body>
+<<<<<<< HEAD
     <div class="container">
         <a id="logo" href="#">My Portfolio.</a>
         <div class="home-button">
@@ -161,41 +143,90 @@
          
          <a href="{{ url('/contact') }}"><button type="button">contact</button></a>
          <a href="{{ url('/login') }}"><button type="button">Admin Login</button></a>
+=======
+    <nav class="navbar">
+        <div class="logo">My Portfolio</div>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/projects">Projects</a></li>
+            <li><a href="/about">About Me</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/resume">Resume</a></li>
+        </ul>
+    </nav>
+>>>>>>> 383444fe26dc9e82f15133ff393efbd152ef4118
 
-         
-       </div>
-       
+    <div class="container">
+        <div class="left">
+            <h1>Hello, I'm Mikki</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt saepe earum excepturi nostrum eum enim deleniti tenetur assumenda quod, facere nam qui illo atque laboriosam aspernatur ratione error quia temporibus.
+        Blanditiis consequatur eius tempore, inventore accusantium accusamus praesentium laudantium ea reiciendis, illo reprehenderit aut? Debitis suscipit nobis ab ut natus eligendi sunt vero at, ex, illo optio, nostrum blanditiis iusto!
+        Beatae harum quaerat molestias id facere nobis architecto ad mollitia nulla autem. Maxime et non sint autem corrupti! Alias, ipsum corrupti. Velit ipsa saepe commodi natus esse quo. Quaerat, laudantium.
+      </p>
+      <a href="/"><button class="btn">View Projects</button></a>
     </div>
-    <div class="profile">
-        <img   src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Cristiano_Ronaldo_playing_for_Al_Nassr_FC_against_Persepolis%2C_September_2023_%28cropped%29.jpg">
-        <div class="info">
-        <h2>My Webdevelopment <br> experience</h2>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt, libero. Eos molestias quia rerum voluptatum. Eveniet deleniti a quae placeat nam repellat odit alias in, ratione, quos optio voluptates unde!
-        Hic, deleniti inventore ipsa autem sed eaque. Velit, est? Ad, eos. Deleniti repellat iure quod ut architecto nisi dolorem amet quam. Sapiente facere deserunt earum vel cum aut eligendi quae.</p>
-      <button class="viewbutton">View projects</button>
+
+    <div class="right">
+      <img src="https://th.bing.com/th/id/OIP.BV0smfVZaoC-6rlL8_Bc7AHaEK?w=1920&h=1080&rs=1&pid=ImgDetMain" alt="Profile Photo">
     </div>
-     
     </div>
-    <h2>My project</h2>
-    <div class="feature-project">
-        <div class="first-project">
-             <img class="img2" src="https://th.bing.com/th/id/OIP.-R7L1NQbT_g7R6n0Vngw6AHaEP?rs=1&pid=ImgDetMain">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia perferendis atque iste corrupti id odio suscipit quo saepe itaque, beatae exercitationem inventore eius dicta voluptates, vero animi? Magnam, optio cumque.</p>
-         </div>
-        <div class="first-project">
-             <img  class="img2" src="https://th.bing.com/th/id/OIP.-R7L1NQbT_g7R6n0Vngw6AHaEP?rs=1&pid=ImgDetMain">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia perferendis atque iste corrupti id odio suscipit quo saepe itaque, beatae exercitationem inventore eius dicta voluptates, vero animi? Magnam, optio cumque.</p>
-        </div>
-        <div class="first-project">
-             <img class="img2" src="https://th.bing.com/th/id/OIP.-R7L1NQbT_g7R6n0Vngw6AHaEP?rs=1&pid=ImgDetMain">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia perferendis atque iste corrupti id odio suscipit quo saepe itaque, beatae exercitationem inventore eius dicta voluptates, vero animi? Magnam, optio cumque.</p>
-         
-        </div>
+
+    <section style="padding: 50px 10%;">
+        <h2 style="font-size: 32px; color:rgb(57, 89, 61); margin-bottom: 30px;">Featured Project</h2>
+        <div style="display: grid; grid-template-columns:1fr 1fr 1fr 1fr; gap: 30px; justify-content: 
+            center;">
+
+    <div style="background: white; border: 2px solid none; border-radius: 10px; 
+    overflow: hidden; width: 300px; box-shadow: 0 10px 20px rgb(0, 0, 0, 0.2);">
+    <img src="https://nestify.io/wp-content/uploads/2023/04/35019949_8252889-1024x576.jpg" alt="E-Commerce" style="width: 100%; 
+    height: 180px; object-fit: cover;">
+    <div style="padding: 15px;">
+        <h6 class="project-title">Platform for E-commerce</h6>
+        <p class="project-decreiption" style="font-size: 14px; color: rgb(23, 23, 23);">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto placeat modi tempora accusamus explicabo alias ratione, soluta voluptate autem quo dolores reiciendis. Distinctio tempore possimus non sequi quod numquam accusantium!
+    </p>
+      </div>
     </div>
-    <div class="footer">
-        <h2>About Me</h2>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur minus placeat, ea quaerat unde accusamus necessitatibus ad quam officiis culpa iusto magni sint consectetur quis nemo numquam optio nisi tempora!</p>
+
+    <div style="background: white; border: 2px none;border-radius: 10px;
+    overflow: hidden; width: 300px; box-shadow: 0 10px 20px rgb(0, 0, 0, 0.2);">
+    <img src="https://s3-alpha.figma.com/hub/file/1171935825/689d7884-5ef7-4671-a2b3-bfb59996cfa9-cover.png" alt="E-Commerce" style="width: 
+    100%; height: 180px; object-fit: cover;">
+    <div style="padding: 15px;">
+        <h6 class="project-title">Mobile App for Fitness Tracking</h6>
+        <p class="project-decreiption" style="font-size: 14px; color:rgb(23, 23, 23);">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto placeat modi tempora accusamus explicabo alias ratione, soluta voluptate autem quo dolores reiciendis. Distinctio tempore possimus non sequi quod numquam accusantium!
+    </p>
     </div>
+    </div>
+
+    <div style="background: white; border: 2px none;border-radius: 10px;
+    overflow: hidden; width: 300px; box-shadow: 0 10px 20px rgb(0, 0, 0, 0.2);">
+    <img src="https://thinklayer.com/wp-content/uploads/2021/06/business-analytics-services-transforming-data-into-insight-1-scaled.jpg" alt="E-Commerce" style="width: 
+    100%; height: 180px; object-fit: cover;">
+    <div style="padding: 15px;">
+        <h6 class="project-title">Data Analytics for Business Insights</h6>
+        <p class="project-decreiption" style="font-size: 14px; color:rgb(23, 23, 23);">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto placeat modi tempora accusamus explicabo alias ratione, soluta voluptate autem quo dolores reiciendis. Distinctio tempore possimus non sequi quod numquam accusantium!
+    </p>
+    </div>
+    </div>
+
+    <div style="background: white; border: 2px none; border-radius: 10px;
+    overflow: hidden; width: 300px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); ">
+    <img src="https://th.bing.com/th/id/OIP.pGktFUArFz-Fc4570n1HigHaDo?rs=1&pid=ImgDetMain" alt="E-Commerce" style="width: 100%; 
+    height: 180px; object-fit: cover;">
+    <div style="padding: 15px;">
+        <h6 class="project-title">Data Analytics Dashboard for Business Insights</h6>
+        <p class="project-decreiption" style="font-size: 14px; color:rgb(23, 23, 23);">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto placeat modi tempora accusamus explicabo alias ratione, soluta voluptate autem quo dolores reiciendis. Distinctio tempore possimus non sequi quod numquam accusantium!
+    </p>
+    </div>
+    </div>
+
+    </div>
+    </section>
 </body>
 </html>
 

@@ -7,6 +7,7 @@ use App\Models\Project;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProjectRequest;
 
+
 class ProjectController extends Controller
 {
     // Load public home page with portfolio entries
@@ -20,7 +21,7 @@ class ProjectController extends Controller
     public function project()
     {
         $projects = Project::latest()->get();
-        return view('project', compact('projects'));
+        return view('project', ['projects' => $projects]);
     }
 
     public function about()
@@ -28,6 +29,7 @@ class ProjectController extends Controller
         return view('about'); // view: resources/views/about.blade.php
     }
 
+<<<<<<< HEAD
     // Dashboard about page (with edit functionality)
     public function dashboardAbout()
     {
@@ -42,5 +44,30 @@ class ProjectController extends Controller
      public function contact()
     {
         return view('contact'); // view: resources/views/about.blade.php
+=======
+            $path = $request->file('photo')->store('images','local');
+            $validated['photo']='storage/' .$path;
+        }
+        Project::create($validated);
+        return redirect('/');
+     } 
+     public function update(ProjectRequest $request)
+    {  
+        $validated = $request->validated();
+        if($request->hasFile('photo')){
+            $path =  $request->file('photo')->store('images','local');
+            $validated['photo'] = 'storage/' . $path;
+        }
+
+        Project::where('id', $request['id'])->update($validated);
+
+        return redirect('/');
+    }
+
+    public function updateView($id)
+    {
+        $pro = Project::where('id', $id)->get();
+        return view('update', ['pro'=>$pro[0]]);
+>>>>>>> 383444fe26dc9e82f15133ff393efbd152ef4118
     }
 }
