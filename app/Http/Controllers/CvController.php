@@ -3,41 +3,47 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Cv;
 use Illuminate\Support\Facades\Storage;
 
 class CvController extends Controller
 {
-    
+    // Show list of CVs (paginated)
     public function index()
     {
-        
-        $files = Storage::files('public/cv');
-
-        
-        $cv = array_map(function ($file) {
-            return ['photo' => Storage::url($file)];
-        }, $files);
-
-        return view('cv', compact('cv'));
+        $cvs = Cv::latest()->paginate(5);
+        return view('cv', ['cv' => $cvs, 'cvs' => $cvs]);
     }
 
-   
-    public function uploadForm()
+    // Show upload form
+    public function create()
     {
         return view('uploadcv');
     }
 
-    
+    // Store uploaded CV
     public function store(Request $request)
     {
-        $request->validate([
-            'cv_file' => 'required|file|mimes:pdf,jpg,jpeg,png|max:2048',
+        $validated = $request->validate([
+            'cv_file' => 'required|file|mimes:pdf,jpg,jpeg,png|max:2048'
         ]);
 
-        $file = $request->file('cv_file');
+        if ($request->hasFile('cv_file')) {
+            $path = $request->file('cv_file')->store('cvs', 'public');
+            Cv::create(['photo' => $path]);
+        }
 
-        $path = $file->store('local/cv');
-
-        return redirect('/cv')->with('success', 'CV uploaded successfully!');
+        return redirect('/cv');
     }
+
+    // Soft delete CV
+    public function destroy($id)
+    {
+        $cv = Cv::findOrFail($id);
+        $cv->delete();
+
+        return redirect('/cv');
+    }
+
+    
 }

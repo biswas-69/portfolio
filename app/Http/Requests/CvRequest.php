@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AboutRequest extends FormRequest
+class CvRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,9 +23,6 @@ class AboutRequest extends FormRequest
     {
         return [
             'photo' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
-            'email' => 'required|email',
-            'contact' => 'required|string|min:10',
-            'description' => 'required|string|min:10',
         ];
     }
 }

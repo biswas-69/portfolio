@@ -34,6 +34,7 @@
         font-weight: bold;
     }
 
+    input[type="text"],
     input[type="file"] {
         padding: 10px;
         margin-top: 5px;
@@ -47,7 +48,7 @@
     .sub_btns {
         display: flex;
         justify-content: space-between;
-        margin-top: 0px;
+        margin-top: 20px;
     }
 
     .sub_btns a {
@@ -81,27 +82,37 @@
 </style>
 
 @section('content')
-    <h1>My CV/Resume</h1>
     <div class="container">
-        <div class="sub_btns">
-            <a href="/uploadcv">Upload</a>
-        </div>
+        <h1>Add Projects</h1>
+        @if ($errors->any())
+            <div>
+                <strong>Whoops!</strong>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
 
-        <ul>
-            @foreach ($cv as $pro)
-                <li>
-                    <div class="list">
-                        <div class="image">
-                            <img id="image" src="{{ asset($pro['photo']) }}" alt="img" style="max-width: 100%; height: auto;">
-                        </div>
-                    </div>
-                </li>
-            @endforeach
-        </ul>
-        <div class="pagination">
-            {{$cvs->links()}}
-        </div>
+        <form class="form" method="POST" action="/addp" enctype="multipart/form-data">
+            @csrf
+            <div>
+                <label for="title">Title</label>
+                <input type="text" name="title" id="title" required>
+            </div>
+            <div>
+                <label for="details">Details</label>
+                <input type="text" name="details" id="details" required>
+            </div>
+            <div>
+                <label for="image">Image</label>
+                <input type="file" name="photo" id="image" accept="image/*">
+            </div>
+            <div class="sub_btns">
+                <a href="project" type="button">Cancel</a>
+                <button type="submit">ADD</a>
+            </div>
+        </form>
     </div>
-
 @endsection
-   

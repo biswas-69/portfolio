@@ -4,33 +4,32 @@ namespace App\Http\Controllers;
 
 // use App\Models\Portfolio;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\ProjectRequest;
-use App\Models\Project;
+use App\Http\Requests\ProfileRequest;
+use App\Models\Profile;
 
 
-class ProjectController extends Controller
+class ProfileContentController extends Controller
 {
     public function index()
     {
-        $projects = Project::latest()->paginate(10);
-        return view('project', ['projects' => $projects]);
+        $profiles = Profile::latest()->paginate(10);
+        return view('profile', ['profiles' => $profiles]);
     }
 
     public function about()
     {
         return view('about');
     }
-    public function project()
+    public function profiles()
     {
-        $projects = Project::latest()->get();
-        return view('project', ['projects' => $projects]);
+        $profiles = Profile::latest()->get();
+        return view('profile', ['profiles' => $profiles]);
     }
-     public function addp()
+     public function addprofile()
      {
-        return view('addp');
+        return view('addprofile');
      }
-     
-     public function store(ProjectRequest $request)
+     public function store(ProfileRequest $request)
      {
         $validated =$request->validated();
         if($request->hasfile('photo')){
@@ -38,10 +37,10 @@ class ProjectController extends Controller
             $path = $request->file('photo')->store('images','local');
             $validated['photo']='storage/' .$path;
         }
-        Project::create($validated);
+        Profile::create($validated);
         return redirect('/');
      } 
-     public function update(ProjectRequest $request)
+     public function update(ProfileRequest $request)
     {  
         $validated = $request->validated();
         if($request->hasFile('photo')){
@@ -49,14 +48,14 @@ class ProjectController extends Controller
             $validated['photo'] = 'storage/' . $path;
         }
 
-        Project::where('id', $request['id'])->update($validated);
+        Profile::where('id', $request['id'])->update($validated);
 
         return redirect('/');
     }
 
     public function updateView($id)
     {
-        $pro = Project::where('id', $id)->get();
+        $pro = Profile::where('id', $id)->get();
         return view('update', ['pro'=>$pro[0]]);
     }
 }
