@@ -4,11 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-class Cv extends Model
+
+class Profile extends Model
 {
     use SoftDeletes;
 
-    protected $table = 'cvs';
+    protected $table = 'profiles';
 
-    protected $fillable = ['photo'];
+    protected $fillable = ['title','others','photo'];
 }
+

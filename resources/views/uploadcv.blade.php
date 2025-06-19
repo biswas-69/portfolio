@@ -34,6 +34,7 @@
         font-weight: bold;
     }
 
+    input[type="text"],
     input[type="file"] {
         padding: 10px;
         margin-top: 5px;
@@ -47,7 +48,7 @@
     .sub_btns {
         display: flex;
         justify-content: space-between;
-        margin-top: 0px;
+        margin-top: 20px;
     }
 
     .sub_btns a {
@@ -78,30 +79,29 @@
         margin-left: 20px;
         color: red;
     }
+
 </style>
 
 @section('content')
-    <h1>My CV/Resume</h1>
     <div class="container">
-        <div class="sub_btns">
-            <a href="/uploadcv">Upload</a>
-        </div>
+        <h1>Upload Your CV</h1>
+        <form class="form" method="POST" action="/cv" enctype="multipart/form-data">
+            @csrf
+            <label for="cv_file">Choose CV File</label>
+            <input type="file" name="cv_file" id="cv_file" required>
 
-        <ul>
-            @foreach ($cv as $pro)
-                <li>
-                    <div class="list">
-                        <div class="image">
-                            <img id="image" src="{{ asset($pro['photo']) }}" alt="img" style="max-width: 100%; height: auto;">
-                        </div>
-                    </div>
-                </li>
-            @endforeach
-        </ul>
-        <div class="pagination">
-            {{$cvs->links()}}
-        </div>
+            <div class="sub_btns">
+                <button type="submit">Upload</button>
+                <a href="/cv">Back</a>
+            </div>
+
+            @if ($errors->any())
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li><strong>{{ $error }}</strong></li>
+                    @endforeach
+                </ul>
+            @endif
+        </form>
     </div>
-
 @endsection
-   

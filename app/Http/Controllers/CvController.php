@@ -1,58 +1,49 @@
 <?php
+
 namespace App\Http\Controllers;
 
-use App\Models\Cv;
 use Illuminate\Http\Request;
+use App\Models\Cv;
 use Illuminate\Support\Facades\Storage;
-use PDF;
 
 class CvController extends Controller
 {
+    // Show list of CVs (paginated)
+    public function index()
+    {
+        $cvs = Cv::latest()->paginate(5);
+        return view('cv', ['cv' => $cvs, 'cvs' => $cvs]);
+    }
+
+    // Show upload form
     public function create()
     {
-        return view('cv');
+        return view('uploadcv');
     }
 
+    // Store uploaded CV
     public function store(Request $request)
     {
-        $data = $request->validate([
-            'name' => 'required',
-            'address' => 'required',
-            'education' => 'required|array',
-            'experience' => 'required|array',
-            'hobbies' => 'required|array',
-            'award' => 'required|array',
-            'photo' => 'nullable|image|mimes:jpg,png,jpeg|max:2048',
+        $validated = $request->validate([
+            'cv_file' => 'required|file|mimes:pdf,jpg,jpeg,png|max:2048'
         ]);
 
-        if ($request->hasFile('photo')) {
-            $data['photo'] = $request->file('photo')->store('uploads', 'public');
+        if ($request->hasFile('cv_file')) {
+            $path = $request->file('cv_file')->store('cvs', 'public');
+            Cv::create(['photo' => $path]);
         }
 
-        // Convert arrays to JSON
-        $data['education'] = json_encode($data['education']);
-        $data['experience'] = json_encode($data['experience']);
-        $data['hobbies'] = json_encode($data['hobbies']);
-        $data['award'] = json_encode($data['award']);
-
-        $cv = Cv::create($data);
-
-        return redirect()->route('cv.preview', $cv->id);
+        return redirect('/cv');
     }
 
-    public function preview($id)
+    // Soft delete CV
+    public function destroy($id)
     {
         $cv = Cv::findOrFail($id);
-        return view('cv-preview', compact('cv'));
+        $cv->delete();
+
+        return redirect('/cv');
     }
 
-    public function download($id)
-    {
-         $cv = Cv::findOrFail($id);
-
-    $pdf = Pdf::loadView('cv-pdf', compact('cv'));
-
-    return $pdf->download('cv_' . $cv->name . '.pdf');
-    }
+    
 }
-

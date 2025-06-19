@@ -99,7 +99,7 @@
             @csrf
             <div>
                 <label for="title">Title</label>
-                <input type="text" name="name" id="title" required>
+                <input type="text" name="title" id="title" required>
             </div>
             <div>
                 <label for="details">Details</label>
@@ -111,7 +111,7 @@
             </div>
             <div class="sub_btns">
                 <a href="project" type="button">Cancel</a>
-                <a href="project" type="button">ADD</a>
+                <button type="submit">ADD</a>
             </div>
         </form>
     </div>
