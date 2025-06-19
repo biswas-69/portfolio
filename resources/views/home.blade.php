@@ -137,7 +137,7 @@
         <div class="logo">My Portfolio</div>
         <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="/projects">Projects</a></li>
+            <li><a href="/project">Project</a></li>
             <li><a href="/about">About Me</a></li>
             <li><a href="/contact">Contact</a></li>
             <li><a href="/resume">Resume</a></li>
@@ -146,7 +146,7 @@
 
     <div class="container">
         <div class="left">
-            <h1>Hello, I'm Mikki</h1>
+            <h1>Hello, I'm Anju</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt saepe earum excepturi nostrum eum enim deleniti tenetur assumenda quod, facere nam qui illo atque laboriosam aspernatur ratione error quia temporibus.
         Blanditiis consequatur eius tempore, inventore accusantium accusamus praesentium laudantium ea reiciendis, illo reprehenderit aut? Debitis suscipit nobis ab ut natus eligendi sunt vero at, ex, illo optio, nostrum blanditiis iusto!

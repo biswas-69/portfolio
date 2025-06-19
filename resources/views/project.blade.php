@@ -83,12 +83,12 @@
     }
   </style>
   @section('content')
-<a href="/login" style="text-align:left;">Redirect to login page</a>
+
 <h1> My TODO List </h1>
     <div class="content">
-        <div class="add_btn">
-                <a href="/addp" class="edit_btn"> ADD </a><br><br>
-                <form method="POST" action="/logout">
+        <div class="top-right-btn">
+                <a href="/addp" class="top-right-btn"> ADD </a><br><br>
+                <form method="POST" action="/project">
 
 
         </div>
@@ -98,7 +98,7 @@
             <div class="image">
                 <img id="image" src="{{asset($pro['photo']) }}" alt="img">
             </div>
-            <p>{{$projects['name']}}</p>
+            <p>{{$pro->name}}</p>
             <aside>
                 <a type="button" class="edit_btn" href="/update/{{$pro['id']}}">Edit</a>
                 <form method="POST" action="/delete/{{$pro['id']}}">
@@ -117,41 +117,3 @@
         </div>
     </div>
 @endsection
-</head>
-<body>
-  <div class="container">
-    <h1>My Projects</h1>
-
-    <div class="project">
-      <!-- Button in top-right -->
-      <div class="top-right-btn">
-        <a href="addp"><button>ADD</button></a>
-      </div>
-
-      <!-- Project 1 -->
-      <div class="project-row">
-        <img src="h3.jpg" alt="Portfolio Website">
-        <div class="project-content">
-          <h2>Portfolio Website</h2>
-          <div class="details">
-            <p>Laravel, HTML, CSS</p>
-            <a href="https://github.com/biswas-69/port">GitHub link</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 2 -->
-      <div class="project-row">
-        <img src="e3.jpeg" alt="E-Commerce Website">
-        <div class="project-content">
-          <h2>E-Commerce Website</h2>
-          <div class="details">
-            <p>PHP, HTML, CSS, JavaScript</p>
-            <a href="https://github.com/biswas-69/port">GitHub link</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-</html>
