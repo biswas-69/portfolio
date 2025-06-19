@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About page</title>
+@extends('partial.layout')
   <style>
     body {
       margin: 0;
@@ -41,7 +36,7 @@
       height: 200px;
       width: 200px;
       border-radius: 50%;
-      margin-top: 25px;
+      margin-top: 15px;
     }
 
     .contactcontainer {
@@ -87,7 +82,7 @@
 }
 
   </style>
-</head>
+
 <body>
   
   <div class="container">
@@ -98,34 +93,42 @@
       </div>
         <div class="about"><a href="#">ABOUT ME</a></div>
       <div class="contactcontainer">
-        <div class="email"><a href="#">baijyanathdas123@gmail.com</a></div>
-        <div class="contact"><a href="#">9845419045</a></div>
+        <div class="email"><a href="#">anjupurkuti@gmail.com</a></div>
+        <div class="contact"><a href="#">984970291</a></div>
       </div>
     </div>
     
 
     <div>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam, architecto delectus? Libero, quas! Voluptatum consequatur, nisi praesentium minima mollitia aspernatur quidem minus aliquid impedit alias. Repudiandae debitis iusto numquam labore.
-      Sint similique saepe numquam fuga nulla quo. Obcaecati laborum autem accusamus suscipit inventore dolores, dolore aspernatur. Id unde fugiat saepe modi, perferendis sunt est aperiam dignissimos esse tempore quisquam quis.
-      Blanditiis mollitia tenetur corrupti illum beatae voluptatem inventore dolores, eveniet deserunt iste quod dolorum, nulla iusto. Accusamus reprehenderit aperiam animi quos enim laboriosam, quidem dolor ea ipsam ex iusto quae.
-      Ad ratione harum vitae assumenda veniam! Culpa tempore optio itaque. Eos atque consectetur amet repellat voluptate, facilis quidem, non quo totam quis deserunt illo voluptatem aspernatur repudiandae officia vero nemo.
-      Velit tenetur assumenda quos ullam nisi natus ut vel! Animi voluptates ducimus expedita facilis non cupiditate saepe modi delectus sit tempora provident at mollitia, aliquam, deserunt autem unde distinctio voluptas.
-      Excepturi illum nobis, quam, expedita quo adipisci repellat unde laborum ex ducimus iusto dolorem a dicta ut alias, deserunt vitae. Facere provident repellat quisquam dolor sunt. Odio distinctio quibusdam eaque.
-      Itaque nobis placeat dolore. Provident velit unde at laboriosam. Quam ipsam laboriosam quia necessitatibus totam quis odit nobis ducimus doloribus quod, at asperiores id nam facere praesentium neque numquam error?
-      Odit voluptatum vero dignissimos et accusantium, molestiae voluptatem officia dolore debitis, quaerat voluptatibus delectus. Magni perferendis, necessitatibus alias numquam et culpa. Aspernatur ipsum beatae harum quae id debitis, accusantium magnam!
-      Iusto at itaque quod consectetur id, sint qui ipsum quidem, perferendis nisi libero repellendus nemo, quia incidunt. Voluptatibus doloribus in non corporis ad, blanditiis itaque? Rerum, quam. Dolore, dolores temporibus?
-      Commodi dolorum dolor at, reiciendis suscipit, id odio aut animi explicabo rem cupiditate? Optio ex voluptatum exercitationem tempore molestiae dolorum recusandae excepturi voluptates aut repellat. Id maxime eaque voluptas fugit. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa explicabo aliquid, quis ullam a sapiente maxime nam eius dolorum nostrum eum, in non voluptate, corporis inventore. Sapiente eos non tempore. <br>
-       Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit natus magni culpa iusto! Magnam, accusamus est aspernatur, dolorum sed animi pariatur asperiores error blanditiis ut ullam voluptatem ad rerum possimus.
-       Obcaecati voluptas amet facilis aliquam laudantium sequi, quos maiores quibusdam nostrum pariatur ut! Necessitatibus excepturi, quos, sit nesciunt ullam corporis voluptatibus vero ipsa sapiente commodi rem quae neque nostrum tenetur?
-       Doloremque, qui temporibus culpa, dignissimos odit repellendus dolorum fugit laudantium tenetur alias cumque mollitia suscipit totam. Tempora explicabo ex aspernatur. Architecto suscipit consequatur, quis ullam neque aperiam ut ea doloribus.
-       Fugiat, facilis, quam aut eaque excepturi sint molestiae aliquam earum consequuntur amet, dolorum odit commodi? Laboriosam autem beatae nam distinctio asperiores odit optio possimus magnam natus. Quos vel dignissimos dolor?
-       Atque neque laborum est, quae perferendis placeat dolor ad blanditiis reiciendis ipsa saepe in eaque, inventore nostrum iste incidunt eum ea commodi corrupti consectetur. Reiciendis in odit debitis minima at.
-       Quibusdam recusandae laudantium aperiam animi labore maxime temporibus quasi est sed adipisci ad, veniam ipsum ducimus impedit autem quod eveniet accusamus quas. Obcaecati exercitationem itaque, odio maxime asperiores totam velit!
-       Corrupti ab similique amet inventore harum, optio quisquam soluta alias unde ipsa veniam non excepturi saepe nulla cupiditate voluptas aliquid exercitationem modi ullam pariatur illo nostrum, impedit quam. Minima, repellendus!
-       Exercitationem doloribus iure modi saepe, ullam sit omnis nihil animi repudiandae quo accusamus, fugit aut maxime ea! Illo sed tempora possimus itaque, debitis, laudantium, harum consectetur deserunt quia eligendi fugit.
-       Unde necessitatibus nam, reiciendis pariatur exercitationem consequatur. Sed repellat eum deleniti optio molestias voluptate unde facilis mollitia error corporis eveniet consectetur nihil dolores a, temporibus autem! Non, architecto at? Natus.
-       Beatae tempore vero sequi sit, laboriosam officia consequatur quidem iusto maiores dicta non expedita cumque quam totam ea quisquam ullam dolores molestias asperiores debitis at reprehenderit? Id voluptate dolore aliquid!</p>
+      <p>Hi, I'm a BCA undergraduate with a passion for coding and technology.
+       I’ve learned programming languages like PHP, Laravel, Java, and others as part of my course.
+       I’m not an expert yet, but I have a solid basic understanding and I enjoy exploring and building 
+       things through code. I'm always eager to learn more and grow my skills by working on real-world projects.
+      Hi, I'm a BCA undergraduate with a passion for coding and technology.
+       I’ve learned programming languages like PHP, Laravel, Java, and others as part of my course.
+       I’m not an expert yet, but I have a solid basic understanding and I enjoy exploring and building 
+       things through code. I'm always eager to learn more and grow my skills by working on real-world projects.
+      Hi, I'm a BCA undergraduate with a passion for coding and technology.
+       I’ve learned programming languages like PHP, Laravel, Java, and others as part of my course.
+       I’m not an expert yet, but I have a solid basic understanding and I enjoy exploring and building 
+       things through code. I'm always eager to learn more and grow my skills by working on real-world projects.
+      Hi, I'm a BCA undergraduate with a passion for coding and technology.
+       I’ve learned programming languages like PHP, Laravel, Java, and others as part of my course.
+       I’m not an expert yet, but I have a solid basic understanding and I enjoy exploring and building 
+       things through code. I'm always eager to learn more and grow my skills by working on real-world projects.
+      Hi, I'm a BCA undergraduate with a passion for coding and technology.
+       I’ve learned programming languages like PHP, Laravel, Java, and others as part of my course.
+       I’m not an expert yet, but I have a solid basic understanding and I enjoy exploring and building 
+       things through code. I'm always eager to learn more and grow my skills by working on real-world projects.
+      Hi, I'm a BCA undergraduate with a passion for coding and technology.
+       I’ve learned programming languages like PHP, Laravel, Java, and others as part of my course.
+       I’m not an expert yet, but I have a solid basic understanding and I enjoy exploring and building 
+       things through code. I'm always eager to learn more and grow my skills by working on real-world projects.
+      Hi, I'm a BCA undergraduate with a passion for coding and technology.
+       I’ve learned programming languages like PHP, Laravel, Java, and others as part of my course.
+       I’m not an expert yet, but I have a solid basic understanding and I enjoy exploring and building 
+       things through code. I'm always eager to learn more and grow my skills by working on real-world projects.</p>
     </div>
   </div>
 </body>
-</html>
+

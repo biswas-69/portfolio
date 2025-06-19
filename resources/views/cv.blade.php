@@ -34,7 +34,6 @@
         font-weight: bold;
     }
 
-    input[type="text"],
     input[type="file"] {
         padding: 10px;
         margin-top: 5px;
@@ -82,37 +81,24 @@
 </style>
 
 @section('content')
+    <h1>My CV/Resume</h1>
     <div class="container">
-        <h1>Add Projects</h1>
-        @if ($errors->any())
-            <div>
-                <strong>Whoops!</strong>
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
+        <div class="sub_btns">
+            <a href="/uploadcv">Upload</a>
+        </div>
 
-        <form class="form" method="POST" action="/addp" enctype="multipart/form-data">
-            @csrf
-            <div>
-                <label for="title">Title</label>
-                <input type="text" name="name" id="title" required>
-            </div>
-            <div>
-                <label for="details">Details</label>
-                <input type="text" name="details" id="details" required>
-            </div>
-            <div>
-                <label for="image">Image</label>
-                <input type="file" name="photo" id="image" accept="image/*">
-            </div>
-            <div class="sub_btns">
-                <a href="project" type="button">Cancel</a>
-                <a href="project" type="button">ADD</a>
-            </div>
-        </form>
+        <ul>
+            @foreach ($cv as $pro)
+                <li>
+                    <div class="list">
+                        <div class="image">
+                            <img id="image" src="{{ asset($pro['photo']) }}" alt="img" style="max-width: 100%; height: auto;">
+                        </div>
+                    </div>
+                </li>
+            @endforeach
+        </ul>
     </div>
+
 @endsection
+   

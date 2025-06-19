@@ -12,21 +12,19 @@ class ProjectController extends Controller
 {
     public function index()
     {
-        $todos = Portfolio::latest()->get();
-        return view('home', compact('home')); 
+        $projects = Project::latest()->paginate(10);
+        return view('project', ['projects' => $projects]);
     }
 
     public function about()
     {
         return view('about');
     }
-
     public function project()
     {
         $projects = Project::latest()->get();
         return view('project', ['projects' => $projects]);
     }
-
      public function add()
      {
         return view('add');
