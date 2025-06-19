@@ -90,7 +90,7 @@
                     <label for="message">Message</label>
                     <textarea name="message" id="message" placeholder="Enter message">{{ old('message') }}</textarea>
 
-                    <button type="submit">Submit</button>
+                    <a href="/dashboard" style="center;">Submit</a>
             </form>
 
         </div>

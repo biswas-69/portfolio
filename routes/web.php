@@ -5,8 +5,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 
 
-Route::get('/dashboard', [ContactController::class, 'dashboard']);
-Route::post('/contact', [ContactController::class, 'contact']);
 
 
 
@@ -16,4 +14,11 @@ Route::post('/contact', [ContactController::class, 'contact']);
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
+Route::get('/contact', function () {
+    return view('contact');
+});
+
 
