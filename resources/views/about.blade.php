@@ -19,6 +19,7 @@
 
 
     .container {
+      position: fixed;
       width: 90%;
       display: flex;
       flex-direction: column;
@@ -92,7 +93,7 @@
   
   <div class="container">
     <div class="contents">
-        
+    
       <div class="logo">
         <img src="https://i.guim.co.uk/img/media/9e1633d73fcfdf20bbf77fecaef9256c8912843f/0_123_3691_2215/master/3691.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=0b5b86b6aebaee4a31f7ef863cd2a94e">
       </div>

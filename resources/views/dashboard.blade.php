@@ -145,7 +145,6 @@
         padding: 1rem;
     }
   
-   
   </style>
 </head>
 <body>
@@ -158,14 +157,24 @@
             <a href="#">
                 <i class="fas fa-home"></i>
                 <span>Dashboard</span>
+
+            </a>
+        </li>
+         <li class="active">
+            <a href="#">
+                <i class="fas fa-home"></i>
+                <span>Edit your profile</span>
+
             </a>
         </li>
         <li>
-            <a href="#">
-                <i class="fas fa-briefcase"></i>
-                <span>Projects</span>
-            </a>
+            <a href="{{ route('dashboard.about') }}">
+    <i class="fas fa-briefcase"></i>
+    <span>about</span>
+    </a>
+
         </li>
+        
         <li>
             <a href="#">
                 <i class="fas fa-code"></i>
@@ -176,14 +185,25 @@
             <a href="#">
                 <i class="fas fa-envelope"></i>
                 <span>Contacts</span>
+
             </a>
         </li>
         <li>
             <a href="#">
                 <i class="fas fa-sign-out-alt"></i>
-                <span>Logout</span>
+                <span>Download CV</span>
             </a>
         </li>
+        <li class="logout">
+    <form method="POST" action="{{ route('logout') }}">
+        @csrf
+        <button type="submit" style="all: unset; display: flex; align-items: center; gap: 1.5rem; width: 100%; padding: 1rem; color: azure; cursor: pointer;">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Log out</span>
+        </button>
+    </form>
+</li>
+
     </ul>
 </div>
 

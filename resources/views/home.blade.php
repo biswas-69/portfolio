@@ -159,7 +159,7 @@
          <a href="{{ url('/about') }}"> <button>About</button></a>
         <a href="{{ url('/project') }}"> <button>Project</button></a>
          
-         <button href="#">Contact</button>
+         <a href="{{ url('/contact') }}"><button type="button">contact</button></a>
          <a href="{{ url('/login') }}"><button type="button">Admin Login</button></a>
 
          

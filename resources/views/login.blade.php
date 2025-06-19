@@ -76,8 +76,10 @@ span.password {
                     <li></li>
             </div>
             @endif
-            <form class="flexbox" action="/login" method="post">
-              @csrf
+            <form class="flexbox" action="{{ route('login') }}" method="POST">
+             @csrf
+
+              
                 <div class="container">
                     <label for="email"><b>Email</b></label>
                     <input type="email" placeholder="Enter Email" name="email" required>
@@ -95,4 +97,6 @@ span.password {
                     <span class="psw"><a href="#">Forgot password?</a></span>
                 </div>
             </form>
+
+          
 @endsection

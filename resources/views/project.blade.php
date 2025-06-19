@@ -95,7 +95,7 @@
     <div class="project">
       <!-- Button in top-right -->
       <div class="top-right-btn">
-        <a href="addp"><button>ADD</button></a>
+        <a href="#"><button>ADD</button></a>
       </div>
 
       <!-- Project 1 -->
