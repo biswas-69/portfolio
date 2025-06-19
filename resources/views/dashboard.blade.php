@@ -151,9 +151,15 @@
     <div class="profile"> </div>
     <ul class="menu"> 
         <li class="active">
-            <a href="dashboard">
+            <a href="home">
                 <i class="fas fa-home"></i>
-                <span>Dashboard</span>
+                <span>Home</span>
+            </a>
+        </li>
+        <li>
+            <a href="profile">
+                <i class="fas fa-briefcase"></i>
+                <span>Profile</span>
             </a>
         </li>
         <li>
